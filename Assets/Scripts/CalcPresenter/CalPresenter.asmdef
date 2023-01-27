@@ -1,0 +1,17 @@
+{
+    "name": "CalPresenter",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f9df9434ffad941b8a8cd0b00a1d525c",
+        "GUID:5b77df15cc32a45bb81bbc26495011e6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
