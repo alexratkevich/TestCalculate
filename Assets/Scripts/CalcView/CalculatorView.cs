@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +13,33 @@ namespace CalcView
         private InputField inputEquation;
         [SerializeField]
         private Button resultButton;
-        
+        [SerializeField]
+        private Image loadingImage;
+
         public string ResultValue => inputEquation.text;
 
-        public void Initialize(Action onResultClick)
+        public event Action ClickResult;
+
+        public void Initialize()
         {
-            resultButton.onClick.AddListener(() => onResultClick());
+            resultButton.onClick.AddListener(() => OnClickResult());
             inputEquation.text = "ssssss";
+
+            Loading();
+        }
+
+        private void OnClickResult()
+        {
+            ClickResult?.Invoke();
+        }
+
+
+        private async void Loading()
+        {
+            await Task.Delay(2000);
+            Debug.LogError($"error");
+            loadingImage.gameObject.SetActive(false);
+
         }
 
         public string GetResult()

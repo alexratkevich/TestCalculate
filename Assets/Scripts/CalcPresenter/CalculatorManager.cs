@@ -22,7 +22,8 @@ namespace CalcPresenter
 
         private void Initialize()
         {
-            calculatorView.Initialize(CalculateResult);
+            calculatorView.Initialize();
+            calculatorView.ClickResult += OnCalculateClick;
 
             if (calculatorModel == null)
                 calculatorModel = new CalculatorModel();
@@ -59,7 +60,7 @@ namespace CalcPresenter
             calculatorModel.SaveData();
         }
 
-        private void CalculateResult()
+        private void OnCalculateClick()
         {
             var result = calculatorView.GetResult();
             calculatorView.ShowResult(result);
