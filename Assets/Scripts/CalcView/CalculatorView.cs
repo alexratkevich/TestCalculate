@@ -22,9 +22,7 @@ namespace CalcView
 
         public void Initialize()
         {
-            resultButton.onClick.AddListener(() => OnClickResult());
-            inputEquation.text = "ssssss";
-
+            resultButton.onClick.AddListener(() => OnClickResult());            
             Loading();
         }
 
@@ -36,8 +34,7 @@ namespace CalcView
 
         private async void Loading()
         {
-            await Task.Delay(2000);
-            Debug.LogError($"error");
+            await Task.Delay(2000);            
             loadingImage.gameObject.SetActive(false);
 
         }
