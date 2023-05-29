@@ -128,17 +128,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1853925189865209094, guid: 07f7191dc8d2d434b9df2c6db673522a, type: 3}
   m_PrefabInstance: {fileID: 1853925189703667715}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &176155910 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1853925189865209093, guid: 07f7191dc8d2d434b9df2c6db673522a, type: 3}
-  m_PrefabInstance: {fileID: 1853925189703667715}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be33a67a29a8e435b878a09afb36d293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,27 +390,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2003276228}
-  - component: {fileID: 2003276227}
+  - component: {fileID: 2003276230}
+  - component: {fileID: 2003276229}
   m_Layer: 0
-  m_Name: CalcManager
+  m_Name: EntryPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2003276227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003276226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82d6c557334a24fc3afea44fd619a2e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  calculatorView: {fileID: 176155910}
 --- !u!4 &2003276228
 Transform:
   m_ObjectHideFlags: 0
@@ -437,6 +414,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003276229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003276226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30aa188a28af946238017b39726fde95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calcView: {fileID: 1853925189703667716}
+--- !u!114 &2003276230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003276226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6261aeff2745e4bbbafe9fd55ec8da14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1853925189703667715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,3 +536,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07f7191dc8d2d434b9df2c6db673522a, type: 3}
+--- !u!114 &1853925189703667716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4118499003395700353, guid: 07f7191dc8d2d434b9df2c6db673522a, type: 3}
+  m_PrefabInstance: {fileID: 1853925189703667715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72d914acc5ac45e38c7c4f1244717a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
