@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace Gateway
+﻿namespace Gateway
 {
     public interface ICalcDB
     {
-        void SetInputData(string inputtData);
-        string GetInputData();
+        void SetInOutData(string inputtData);
+        string GetInOutData();
     }
 }

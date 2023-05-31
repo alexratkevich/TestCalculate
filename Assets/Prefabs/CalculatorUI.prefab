@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 1853925189225795436}
   - component: {fileID: 1853925189225795437}
   - component: {fileID: 1853925189225795438}
+  - component: {fileID: 3302817563972508013}
   m_Layer: 5
   m_Name: ResultButton
   m_TagString: Untagged
@@ -175,6 +176,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3302817563972508013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853925189225795432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c8d5406347641fd86080950fda0bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1853925189686190103
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +332,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1853925189865209094}
-  - component: {fileID: 4118499003395700353}
   m_Layer: 5
   m_Name: CalculatorUI
   m_TagString: Untagged
@@ -349,20 +361,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4118499003395700353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1853925189865209095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e72d914acc5ac45e38c7c4f1244717a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _calcButton: {fileID: 1853925189225795438}
-  _resultText: {fileID: 8632977166559919253}
 --- !u!1 &2086103920021734529
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +664,7 @@ GameObject:
   - component: {fileID: 402740223215703917}
   - component: {fileID: 3944531247505304162}
   - component: {fileID: 8632977166559919253}
+  - component: {fileID: 4494654041050728597}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -830,3 +829,15 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
+--- !u!114 &4494654041050728597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036124780618957677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4223adee53b54e0baaa62ce4ca6e27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

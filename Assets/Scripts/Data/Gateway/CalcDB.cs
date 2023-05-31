@@ -1,24 +1,24 @@
-﻿using System;
-using Entities;
+﻿using Entities;
+
 namespace Gateway
 {
     public class CalcDB: ICalcDB
     {
-		private readonly CalcEntity _entityIpudData;
+		private readonly CalcEntity _entityIputData;
 
         public CalcDB()
         {
-            _entityIpudData = new();
+            _entityIputData = new();
         }
 
-        public void SetInputData(string inputData)
+        public void SetInOutData(string inputData)
         {
-            _entityIpudData.inputData = inputData;
+            _entityIputData.inputData = inputData;
         }
 
-        public string GetInputData()
+        public string GetInOutData()
         {
-            return _entityIpudData.inputData;
+            return _entityIputData.inputData;
         }
     }
 }

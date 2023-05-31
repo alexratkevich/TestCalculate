@@ -1,23 +1,33 @@
-﻿using UnityEngine;
-using System.Collections;
-using Presenter;
+﻿using Presenter;
 using Gateway;
 using UseCases;
+using Zenject;
 
 namespace Entrypoints
 {
-    public class EntryPoint : MonoBehaviour
+    public class EntryPoint : MonoInstaller
     {
         public static ICalcPresenter _calcPresenter;
 
-        // Use this for initialization
-        void Awake()
+        public override void InstallBindings()
         {
-            _calcPresenter = gameObject.GetComponent<CalcPresenter>();
-            ICalcDB calcDB = new CalcDB();
-            ICalcUseCases calcUseCases = new CalcUseCases(calcDB);
-            _calcPresenter.Initialize(calcUseCases);
-        }
+            var gateway = new CalcDB();
+            var usecase = new CalcUseCases(gateway);
+            var presenter = gameObject.AddComponent<CalcPresenter>();
+            presenter.Initialize(usecase);
 
+            // And assign for injection
+            Container
+                .Bind<ICalcDB>()
+                .FromInstance(gateway);
+
+            Container
+                .Bind<ICalcUseCases>()
+                .FromInstance(usecase);
+
+            Container
+                .Bind<ICalcPresenter>()
+                .FromInstance(presenter);
+        }          
     }
 }

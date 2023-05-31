@@ -1,15 +1,14 @@
-﻿using System;
+﻿using UniRx;
 
 namespace UseCases
 {
     public interface ICalcUseCases
-    {
-        Action<string> OnResultChanged { get; set; }
+    {        
+        IReadOnlyReactiveProperty<string> OutputData { get; }
         void CalcResult(int a, int b);
         void SetError();
-        string GetResult();
-        void SaveInputField(string inputField);
-        void SaveResult();
+        string GetInOutData();
+        void SaveInputField(string inputField);        
         void RestoreResult();
     }
 

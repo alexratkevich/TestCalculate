@@ -1,14 +1,15 @@
-﻿using System;
-using UseCases;
+﻿using UseCases;
+using UniRx;
 
 namespace Presenter
 {
     public interface ICalcPresenter
     {
+        IReadOnlyReactiveProperty<string> OutputData { get; }
+
         void Initialize(ICalcUseCases calcUseCases);
         void CalcResult(string inputData);
-        string GetResult();
-        void AddListenerOnCalculatedResult(Action<string> result);
+        string GetInOutResult();        
         void SaveInputField(string inputField);
     }
 }

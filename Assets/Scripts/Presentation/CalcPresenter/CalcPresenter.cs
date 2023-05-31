@@ -1,44 +1,43 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UseCases;
-using System;
-using Views;
-using UnityEngine.Serialization;
+using UniRx;
 
 namespace Presenter
 {
 	public class CalcPresenter : MonoBehaviour, ICalcPresenter
 	{
-        [FormerlySerializedAs("calcView")]
-        [SerializeField]
-        private CalcView _calcView;
-        private ICalcUseCases _calcUseCases;       
+        public IReadOnlyReactiveProperty<string> OutputData => _outputData;
+        private readonly ReactiveProperty<string> _outputData = new ReactiveProperty<string>();
+        private ICalcUseCases _calcUseCases;
 
         public void Initialize(ICalcUseCases calcUseCases)
         {
             _calcUseCases = calcUseCases;
-            _calcView.Initialize(this);
-            _calcUseCases.RestoreResult();
-        }
+            
+            _calcUseCases.OutputData.Subscribe((x) =>
+            {
+                _outputData.Value = x;
+            }).AddTo(this);
 
-        public void AddListenerOnCalculatedResult(Action<string> OnResultChanged)
-        {
-            _calcUseCases.OnResultChanged += (x => OnResultChanged?.Invoke(x));
+            _calcUseCases.RestoreResult();            
         }
 
         public void CalcResult(string inputData)
         {
             if (!TryParseInputData(inputData, out int[] inputs))
-            {
                 _calcUseCases.SetError();
-            }
             else
                 _calcUseCases.CalcResult(inputs[0], inputs[1]);            
+        }       
+
+        public string GetInOutResult()
+        {
+            return _calcUseCases.GetInOutData();
         }
 
-        public string GetResult()
+        public void SaveInputField(string inputField)
         {
-            return _calcUseCases.GetResult();
+            _calcUseCases.SaveInputField(inputField);
         }
 
         private bool TryParseInputData(string inputData, out int[] inputs)
@@ -60,13 +59,7 @@ namespace Presenter
             }
 
             return true;
-        }
-
-        public void SaveInputField(string inputField)
-        {
-            _calcUseCases.SaveInputField(inputField);
-            _calcUseCases.SaveResult();
-        }
+        }        
     }
 
 }
